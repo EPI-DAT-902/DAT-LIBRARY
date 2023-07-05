@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  workflow_call:
+    inputs:
+      repository:
+        required: true
+        type: string
+      files_path:
+        required: true
+        type: string
+
+jobs:
+  Release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d%H%M')"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: DAT902-${{ inputs.repository }}-${{ steps.date.outputs.date }}
+          prerelease: true
+          title: DAT902-release-${{ inputs.repository }}-${{ steps.date.outputs.date }}
+          files: |
+            ${{ inputs.files_path }}
