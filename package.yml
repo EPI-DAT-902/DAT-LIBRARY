@@ -1,6 +1,6 @@
 name: package
 
-on:   
+on:
   workflow_call:
     inputs:
       repository:
