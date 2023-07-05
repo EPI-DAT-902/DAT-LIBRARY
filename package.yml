@@ -15,6 +15,6 @@ jobs:
     - uses: actions/checkout@master
     - name: package-Docker
       run: |
-        docker login http://ghcr.io -u EPI-DAT-902 -p ${{ secrets.TOKEN_ESP_PACKAGES }}
+        docker login http://ghcr.io -u EPI-DAT-902 -p ${{ secrets.TOKEN_DAT_FOR_PACKAGES }}
         docker build --file Dockerfile -t ghcr.io/EPI-DAT-902/${{ inputs.repository }}:latest .
         docker push ghcr.io/EPI-DAT-902/${{ inputs.repository }}:latest
