@@ -1,4 +1,4 @@
-name: Release
+name: release
 
 on:
   workflow_call:
@@ -11,8 +11,8 @@ on:
         type: string
 
 jobs:
-  Release:
-    name: "Pre Release"
+  release:
+    name: "release"
     runs-on: "ubuntu-latest"
 
     steps:

@@ -1,4 +1,4 @@
-name: Package
+name: package
 
 on:   
   workflow_call:
@@ -8,8 +8,8 @@ on:
         type: string
 
 jobs:
-  Package:
-    name: package-Docker
+  package:
+    name: "package"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
