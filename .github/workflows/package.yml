@@ -16,5 +16,5 @@ jobs:
     - name: package-Docker
       run: |
         docker login http://ghcr.io -u EPI-DAT-902 -p ${{ secrets.TOKEN_DAT_FOR_PACKAGES }}
-        docker build --file Dockerfile -t ghcr.io/EPI-DAT-902/dat-902:latest .
-        docker push ghcr.io/EPI-DAT-902/dat-902:latest
+        docker build --file Dockerfile -t ghcr.io/EPI-DAT-902/dat_app_902:latest .
+        docker push ghcr.io/EPI-DAT-902/dat_app_902:latest
